@@ -1,0 +1,10 @@
+FROM 10.129.0.25:8082/devops/infra/node:18.19.1
+
+COPY ./backend /opt/app
+
+WORKDIR /opt/app
+
+EXPOSE 3000
+
+
+CMD ["yarn start"]

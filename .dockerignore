@@ -1,0 +1,9 @@
+**/.editorconfig
+**/.env.example
+**/.eslintignore
+**/.eslintrc
+**/.gitignore
+**/.git
+**/README.md
+**/.env.development
+**/package-lock.json

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "requirements",
+  "info": {
+    "singularName": "requirement",
+    "pluralName": "requirements",
+    "displayName": "Requirement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "text",
+      "required": false
+    },
+    "stakeholder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stakehlder.stakehlder",
+      "inversedBy": "requirements"
+    },
+    "source_activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::process.process",
+      "inversedBy": "requirements"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::requirement.requirement",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::requirement.requirement",
+      "mappedBy": "parent"
+    }
+  }
+}

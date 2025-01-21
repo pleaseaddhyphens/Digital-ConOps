@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "life_cycle_stages",
+  "info": {
+    "singularName": "life-cycle-stage",
+    "pluralName": "life-cycle-stages",
+    "displayName": "LifeCycleStage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::process.process",
+      "inversedBy": "life_cycle_stages"
+    }
+  }
+}

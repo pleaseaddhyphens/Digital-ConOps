@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stakehlders",
+  "info": {
+    "singularName": "stakehlder",
+    "pluralName": "stakehlders",
+    "displayName": "Stakeholder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "comments": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Buyer",
+        "User",
+        "Developer",
+        "Observer",
+        "Contractor"
+      ]
+    },
+    "problems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::problem.problem",
+      "mappedBy": "stakeholder"
+    },
+    "requirements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::requirement.requirement",
+      "mappedBy": "stakeholder"
+    },
+    "needs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::need.need",
+      "mappedBy": "stakeholder"
+    }
+  }
+}

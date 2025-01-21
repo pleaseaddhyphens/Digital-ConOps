@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "needs",
+  "info": {
+    "singularName": "need",
+    "pluralName": "needs",
+    "displayName": "Need",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "stakeholder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stakehlder.stakehlder",
+      "inversedBy": "needs"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::process.process",
+      "inversedBy": "needs"
+    }
+  }
+}

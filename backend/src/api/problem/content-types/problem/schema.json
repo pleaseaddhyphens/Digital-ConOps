@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "problems",
+  "info": {
+    "singularName": "problem",
+    "pluralName": "problems",
+    "displayName": "Problem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "stakeholder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stakehlder.stakehlder",
+      "inversedBy": "problems"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::process.process",
+      "inversedBy": "problems"
+    }
+  }
+}

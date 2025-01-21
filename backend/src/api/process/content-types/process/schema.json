@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "processes",
+  "info": {
+    "singularName": "process",
+    "pluralName": "processes",
+    "displayName": "Activity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::process.process",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::process.process",
+      "mappedBy": "parent"
+    },
+    "solution": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::solution.solution",
+      "inversedBy": "processes"
+    },
+    "life_cycle_stages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::life-cycle-stage.life-cycle-stage",
+      "mappedBy": "activity"
+    },
+    "enterprises": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enterprise.enterprise",
+      "mappedBy": "activity"
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technology.technology",
+      "mappedBy": "activity"
+    },
+    "objectives": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::objective.objective",
+      "mappedBy": "activity"
+    },
+    "time": {
+      "type": "integer",
+      "default": 1
+    },
+    "Cost": {
+      "type": "integer"
+    },
+    "needs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::need.need",
+      "mappedBy": "activity"
+    },
+    "problems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::problem.problem",
+      "mappedBy": "activity"
+    },
+    "requirements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::requirement.requirement",
+      "mappedBy": "source_activity"
+    }
+  }
+}

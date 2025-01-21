@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enterprises",
+  "info": {
+    "singularName": "enterprise",
+    "pluralName": "enterprises",
+    "displayName": "Enterprise",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "clients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::enterprise.enterprise",
+      "mappedBy": "contractor"
+    },
+    "contractor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::enterprise.enterprise",
+      "inversedBy": "clients"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::process.process",
+      "inversedBy": "enterprises"
+    }
+  }
+}

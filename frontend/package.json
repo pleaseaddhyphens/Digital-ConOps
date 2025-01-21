@@ -1,0 +1,31 @@
+{
+  "name": "strapi-gatsby-blog-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "strapi-gatsby-blog-site",
+  "author": "pleaseaddhyphens",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "docx": "^8.5.0",
+    "gatsby": "^5.13.5",
+    "gatsby-plugin-react-helmet": "^6.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-source-strapi": "^3.3.3",
+    "gatsby-transformer-remark": "^6.13.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.2.0",
+    "react-router-bootstrap": "^0.26.3",
+    "react-router-dom": "^6.24.1"
+  }
+}

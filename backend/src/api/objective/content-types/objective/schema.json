@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "objectives",
+  "info": {
+    "singularName": "objective",
+    "pluralName": "objectives",
+    "displayName": "Objective",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::objective.objective",
+      "mappedBy": "child"
+    },
+    "child": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::objective.objective",
+      "inversedBy": "parent"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::process.process",
+      "inversedBy": "objectives"
+    }
+  }
+}
